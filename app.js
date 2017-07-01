@@ -24,8 +24,7 @@ function initialPrompt() {
 
 initialPrompt();
 
-// Function executed if user answered BASIC for the above prompt.
-// Takes in the question (front) and answer(back) and logs the input
+
 function createBasic() {
 	inquirer.prompt([{
 		type: "input",
@@ -39,12 +38,12 @@ function createBasic() {
 		var newBasic = new basic(answers.front, answers.back);
 		basicArray.push(newBasic);
 		console.log(basicArray);
+	
 	});
 };
 
 
-// Function executed if user answered CLOZE for the first prompt.
-// Takes in the full question and determines which word(s) will be omitted
+
 function createCloze() {
 	inquirer.prompt([{
 		type: "input",
@@ -58,5 +57,6 @@ function createCloze() {
 		var newCloze = new cloze(answers.text, answers.cloze);
 		clozeArray.push(newCloze);
 		console.log(clozeArray);
+		
 	});
 };
